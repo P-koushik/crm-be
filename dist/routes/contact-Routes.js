@@ -1,0 +1,23 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = __importDefault(require("express"));
+const create_contact_1 = require("../controllers/contact-controller/create-contact");
+const get_all_contacts_1 = require("../controllers/contact-controller/get-all-contacts");
+const get_contact_by_id_1 = require("../controllers/contact-controller/get_contact_by_id");
+const update_contact_1 = require("../controllers/contact-controller/update-contact");
+const delete_contact_1 = require("../controllers/contact-controller/delete-contact");
+const delete_multiple_contacts_1 = require("../controllers/contact-controller/delete_multiple_contacts");
+const import_contacts_1 = require("../controllers/contact-controller/import-contacts");
+const auth_Middleware_1 = __importDefault(require("../middlewares/auth-Middleware"));
+const router = express_1.default.Router();
+router.post("/contacts", auth_Middleware_1.default, create_contact_1.create_contact);
+router.get("/contacts", auth_Middleware_1.default, get_all_contacts_1.get_all_contacts);
+router.get("/contacts/:id", auth_Middleware_1.default, get_contact_by_id_1.get_contact_by_id);
+router.delete("/contacts/:id", auth_Middleware_1.default, delete_contact_1.delete_contact);
+router.put("/contacts/:id", auth_Middleware_1.default, update_contact_1.update_contact);
+router.delete("/contacts", auth_Middleware_1.default, delete_multiple_contacts_1.delete_multiple_contacts);
+router.post("/contacts/import", auth_Middleware_1.default, import_contacts_1.import_contacts);
+exports.default = router;
