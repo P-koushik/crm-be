@@ -46,7 +46,7 @@ const corsOptions = {
     
     const allowedOrigins = [
       "http://localhost:3000",
-      "https://crm-fe-dun.vercel.app"
+      "https://crm-fe-dun.vercel.app",
       process.env.FRONTEND_URL
     ];
     
