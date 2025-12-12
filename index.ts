@@ -22,8 +22,6 @@ import teamRoutes from "./routes/team-Routes";
 dotenv.config();
 
 const PORT = process.env.PORT || 5000;
-const OPENAI_API_KEY = process.env.OPENAI_API_KEY || "";
-const MISTRAL_API_KEY = process.env.MISTRAL_API_KEY || "";
 
 const app = express();
 
@@ -48,9 +46,6 @@ const corsOptions = {
     
     const allowedOrigins = [
       "http://localhost:3000",
-      "http://127.0.0.1:3000",
-      "http://localhost:3001",
-      "http://127.0.0.1:3001"
     ];
     
     if (allowedOrigins.indexOf(origin) !== -1) {

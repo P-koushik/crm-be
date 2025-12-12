@@ -32,8 +32,8 @@ export const register_user = async (req: Request, res: Response): Promise<void> 
         user = new User({
           uid,
           email,
-          name: name || "",
-          photoURL: photoURL || "",
+          name: name ,
+          photoURL: photoURL ,
           // Don't set a default role - let user choose later
         });
         await user.save();
